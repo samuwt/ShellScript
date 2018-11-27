@@ -1,0 +1,21 @@
+#!/bin/bash
+clear
+echo
+echo 'O que você procura é arquivo ou diretório?'
+echo
+echo 'Escolha sua opção:'
+echo 'Opção 1 - Arquivo'
+echo 'Opção 2 - Diretório'
+read OPC1
+read OPC2
+echo
+[ "$OPC1" = "1" ] && exit
+[ "$OPC2" = "2" ] && exit
+clear
+echo 'Digite o caminho do arquivo ou diretorio:'
+read CAMINHO
+[ -d "$CAMINHO" ] && echo "$CAMINHO: É um diretório" && exit
+
+[ -f "$CAMINHO" ] && echo "$CAMINHO: É um arquivo" && exit
+echo "O caminho colocado não existe"
+
